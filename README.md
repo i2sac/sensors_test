@@ -149,4 +149,4 @@ Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de
 
 ---
 
-*Fait avec ❤️ par la communauté Flutter*
+*Fait avec ❤️ par [Louis Isaac DIOUF](https://github.com/i2sac)*
