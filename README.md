@@ -1,155 +1,152 @@
 # Sensors Test 🚀
 
-Bienvenue sur **Sensors Test** ! Ce projet Flutter innovant vous permet de tester et déployer une application multiplateforme, alliant performance et intégration native pour une expérience utilisateur optimale.
+> Une application Flutter moderne pour tester les capteurs sur différentes plateformes.
+
+[![Flutter Version](https://img.shields.io/badge/Flutter-3.x-blue.svg)](https://flutter.dev)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
 
-## 📖 Description
+## 📖 Vue d'ensemble
 
-**Sensors Test** est une application Flutter exemplaire qui combine le code Flutter et l'intégration native pour offrir :
-- **Multi-plateforme** : Support pour Linux, Windows, iOS et Web.
-- **Intégration native avancée** : Utilisation de fichiers CMake pour configurer les composants natifs sous Linux et Windows.
-- **Interface moderne** : Une UI soignée et réactive grâce à Flutter.
-- **Extensibilité & Maintenance** : Architecture modulaire facilitant l'ajout de nouvelles fonctionnalités.
+**Sensors Test** est une application Flutter innovante qui démontre l'intégration native des capteurs sur plusieurs plateformes :
+
+- 📱 **Multi-plateforme** - Android, iOS, Linux, Windows et Web
+- 🔌 **Intégration native** - Accès optimisé aux capteurs système
+- 🎨 **Interface moderne** - Design épuré et responsive
+- 🛠️ **Architecture robuste** - Code modulaire et maintenable
+
+---
+
+## ⚡ Fonctionnalités
+
+- 🔄 Lecture en temps réel des capteurs
+- 📊 Visualisation des données
+- ⚙️ Configuration personnalisable
+- 💾 Exportation des données
+- 🌐 Support multi-langues
 
 ---
 
 ## 🔧 Prérequis
 
-Avant de commencer, assurez-vous d'avoir installé :
+- [Flutter](https://flutter.dev/docs/get-started/install) (version >= 3.0.0)
+- [Visual Studio Code](https://code.visualstudio.com/) avec extensions Flutter & Dart
+- [CMake](https://cmake.org/download/) (≥ 3.14.0)
+- [Git](https://git-scm.com/)
 
-- [Flutter SDK](https://docs.flutter.dev/get-started/install) (version récente)
-- [CMake](https://cmake.org/download/) (nécessaire pour la configuration native sur Linux et Windows)
-- Un compilateur C++ (minGW, Visual Studio, etc.) pour la partie native
-- IDE [Visual Studio Code](https://code.visualstudio.com/) avec les extensions Flutter et Dart
-- Pour iOS : Xcode (macOS requis)
-- Pour le Web : Un navigateur moderne
+**Selon la plateforme cible :**
+- 🪟 Windows : Visual Studio ou MinGW
+- 🐧 Linux : GCC et bibliothèques de développement
+- 🍎 iOS : Xcode (macOS requis)
+- 🌐 Web : Chrome ou Edge
 
 ---
 
-## 🛠️ Installation
+## 🚀 Installation
 
-1. **Cloner le repository** :
-
+1. **Cloner le dépôt :**
    ```bash
-   git clone https://github.com/votre-utilisateur/sensors_test.git
+   git clone https://github.com/votre-nom/sensors_test.git
    cd sensors_test
    ```
 
-2. **Installer les dépendances Flutter** :
-
+2. **Installer les dépendances :**
    ```bash
    flutter pub get
    ```
 
-3. **Configurer les plateformes natives** :
+3. **Configuration native :**
 
-   - **Linux/Windows :**  
-     Les configurations natives se trouvent dans `sensors_tester/linux` et `sensors_tester/windows`. Consultez les fichiers `CMakeLists.txt` pour adapter la configuration à votre environnement.
+   - **Windows/Linux :**  
+     Les fichiers CMake sont dans `windows/` et `linux/`. 
+
    - **iOS :**  
-     Ouvrez le dossier `ios/Runner` dans Xcode pour configurer et compiler l'application.
-   - **Web :**  
-     Le dossier `sensors_tester/web` contient la version web. Vérifiez que le `<base href>` dans le fichier [index.html](c:\Users\7MAKSACOD PC\Documents\repositories\github\sensors_test\sensors_tester\web\index.html) correspond à votre configuration de déploiement.
+     ```bash
+     cd ios
+     pod install
+     ```
 
 ---
 
-## 🖥️ Exécution
+## 💻 Développement
 
-- **Mobile (Android/iOS) :**
+**Lancer en mode debug :**
+```bash
+flutter run
+```
 
-   Lancez l'application en utilisant :
-
-   ```bash
-   flutter run
-   ```
-
-- **Desktop (Linux/Windows) :**
-
-   Utilisez CMake pour configurer et compiler :
-   - **Windows :**  
-     Consultez [sensors_tester/windows/flutter/CMakeLists.txt](c:\Users\7MAKSACOD PC\Documents\repositories\github\sensors_test\sensors_tester\windows\flutter\CMakeLists.txt) ou [sensors_tester/windows/runner/CMakeLists.txt](c:\Users\7MAKSACOD PC\Documents\repositories\github\sensors_test\sensors_tester\windows\runner\CMakeLists.txt).
-   - **Linux :**  
-     Référez-vous au fichier [sensors_tester/linux/flutter/CMakeLists.txt](c:\Users\7MAKSACOD PC\Documents\repositories\github\sensors_test\sensors_tester\linux\flutter\CMakeLists.txt) pour les instructions spécifiques.
-
-- **Web :**
-
-   Exécutez l'application web en lançant :
-
-   ```bash
-   flutter run -d chrome
-   ```
-
-*Astuce 💡 : Testez l'application sur différentes plateformes pour garantir une expérience cohérente et performante !*
+**Build pour production :**
+```bash
+flutter build <plateforme>
+```
+Où `<plateforme>` = `apk`, `ios`, `windows`, `linux`, `web`
 
 ---
 
-## 📋 Structure du Projet
+## 📁 Structure du Projet
 
 ```
 sensors_test/
-├── ios/                    # Configuration iOS et Storyboards (ex. [Main.storyboard](c:\Users\7MAKSACOD PC\Documents\repositories\github\sensors_test\ios\Runner\Base.lproj\Main.storyboard))
-├── sensors_tester/         # Application Flutter principale
-│   ├── lib/                # Code source Flutter (ex. [main.dart](c:\Users\7MAKSACOD PC\Documents\repositories\github\sensors_test\sensors_tester\lib\main.dart))
-│   ├── linux/              # Configuration native pour Linux
-│   │   └── flutter/        # Fichiers CMake pour Flutter sous Linux
-│   ├── windows/            # Configuration native pour Windows
-│   │   ├── flutter/        # Fichiers CMake pour Flutter sous Windows
-│   │   └── runner/         # Runner Windows (ex. [CMakeLists.txt](c:\Users\7MAKSACOD PC\Documents\repositories\github\sensors_test\sensors_tester\windows\runner\CMakeLists.txt))
-│   └── web/                # Application Web (ex. [index.html](c:\Users\7MAKSACOD PC\Documents\repositories\github\sensors_test\sensors_tester\web\index.html))
-├── flutter/                # Librairies et outils supplémentaires Flutter
-├── runner/                 # Configurations complémentaires pour l'application Flutter
-└── README.md               # Documentation du projet
+├── lib/
+│   ├── models/         # Modèles de données
+│   ├── services/       # Services (capteurs, API...)
+│   ├── ui/            # Widgets et écrans
+│   └── utils/         # Utilitaires
+├── native/            # Code natif spécifique
+│   ├── windows/       # ⊞ Configuration Windows
+│   └── linux/         # 🐧 Configuration Linux
+└── test/             # Tests unitaires et d'intégration
 ```
 
 ---
 
-## 🎯 Objectifs du Projet
+## 🧪 Tests
 
-- **Éducation & Démonstration :**  
-  Montrer l'intégration entre Flutter et du code natif sur diverses plateformes.
-- **Extensibilité :**  
-  Une architecture pensée pour faciliter l'ajout de nouvelles fonctionnalités.
-- **Performance :**  
-  Utilisation judicieuse des ressources natives pour garantir une performance optimale.
+**Exécuter les tests :**
+```bash
+flutter test
+```
 
----
-
-## 📚 Ressources Supplémentaires
-
-- [Documentation Flutter](https://docs.flutter.dev/) 📘
-- [Tutoriel CMake](https://cmake.org/cmake/help/latest/guide/tutorial/index.html) 🔨
-- [Guide de Développement Multiplateforme](https://flutter.dev/desktop) 🌐
+**Tests avec couverture :**
+```bash
+flutter test --coverage
+```
 
 ---
 
-## 👥 Contribuer
+## 📚 Documentation
 
-Les contributions sont les bienvenues ! Voici comment contribuer :
+- [Wiki du projet](https://github.com/votre-nom/sensors_test/wiki)
+- [Guide API](docs/API.md)
+- [Guide contribution](CONTRIBUTING.md)
 
-1. Forkez le projet.
-2. Créez une branche avec `git checkout -b feature/amélioration`.
-3. Commitez vos changements avec `git commit -am 'Ajout d’une fonctionnalité'`.
-4. Poussez votre branche `git push origin feature/amélioration`.
-5. Ouvrez une Pull Request.
+---
+
+## 🤝 Contribuer
+
+Les contributions sont bienvenues ! 
+
+1. Fork le projet
+2. Créez votre branche (`git checkout -b feature/AmazingFeature`)
+3. Committez vos changements (`git commit -m 'Add: AmazingFeature'`)
+4. Push sur la branche (`git push origin feature/AmazingFeature`)
+5. Ouvrez une Pull Request
 
 ---
 
 ## 📄 Licence
 
-Ce projet est sous [Licence MIT](c:\Users\7MAKSACOD PC\Documents\repositories\github\sensors_test\LICENSE). Consultez ce fichier pour plus de détails.
+Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
 ---
 
-## 🚀 Lancer les tests
+## 👥 Contact
 
-Pour exécuter les tests unitaires :
-
-```bash
-flutter test
-```
-
-*Assurez-vous que toutes les fonctionnalités fonctionnent comme prévu avant de pousser vos changements !*
+- **Auteur** : Louis Isaac DIOUF
+- **Email** : [contact@example.com](mailto:contact@example.com)
+- **Twitter** : [@VotreCompte](https://twitter.com/VotreCompte)
 
 ---
 
-N'hésitez pas à consulter les fichiers de configuration spécifiques à chaque plateforme et à nous contacter pour toute question ou suggestion. Bon codage ! 💻✨
+*Fait avec ❤️ par la communauté Flutter*
